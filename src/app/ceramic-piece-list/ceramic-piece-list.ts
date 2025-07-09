@@ -15,31 +15,35 @@ export class CeramicPieceList {
       price: 12000,
       stock: 5,
       image: '../assets/images/cafetino_rose.jpg',
-      clearence: false
+      clearance: false,
+      description: 'Descripcion...',
     },
     {
       name: 'Jarra',
       line: 'Rose',
       price: 25000,
       stock: 0,
-      image: '../assets/images/jarra_rose.jpg',
-      clearence: false
+      image: '../assets/images/jarra.jpg',
+      clearance: false,
+      description: 'Descripcion...',
     },
     {
       name: 'Cuenco',
       line: 'Love',
       price: 17000,
       stock: 10,
-      image: '../assets/images/jarra_rose.jpg',
-      clearence: true
+      image: '../assets/images/cuenco.jpg',
+      clearance: true,
+      description: 'Descripcion...',
     },
     {
       name: 'Budinera',
       line: 'Gaspeada',
       price: 22000,
       stock: 2,
-      image: '../assets/images/jarra_rose.jpg',
-      clearence: false
+      image: '../assets/images/budinera.jpg',
+      clearance: false,
+      description: 'Descripcion...',
     },
   ];
   constructor() {}
