@@ -4,5 +4,6 @@ export interface CeramicPiece{
     price: number;
     stock: number;
     image: string;
-    clearence: boolean;
+    clearance: boolean;
+    description: string;
 }
