@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-products-list',
+  selector: 'app-ceramic-piece-list',
   standalone: false,
-  templateUrl: './products-list.html',
-  styleUrl: './products-list.scss'
+  templateUrl: './ceramic-piece-list.html',
+  styleUrl: './ceramic-piece-list.scss'
 })
-export class ProductsList {
-  product = {
+export class CeramicPieceList {
+  piece = {
     "name": "Cafetino",
     "line": "Rose",
     "price": 25000,
