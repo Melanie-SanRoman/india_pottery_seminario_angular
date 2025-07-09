@@ -1,0 +1,43 @@
+<p>products-list works!</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Imagen</th>
+            <th>Linea</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{product.name}}</td>
+            <td><img [src]="product.image" [alt]="product.name"></td>
+            <td>{{product.line}}</td>
+            <td>${{product.price}}</td>
+            <td>{{product.stock}}</td>
+        </tr>
+        <tr>
+            <td>Jarra</td>
+            <td><img src="" alt=""></td>
+            <td>Rose</td>
+            <td>$25000</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Budinera</td>
+            <td><img src="" alt=""></td>
+            <td>Gaspeado</td>
+            <td>$22000</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Cuenco</td>
+            <td><img src="" alt=""></td>
+            <td>Love</td>
+            <td>$15000</td>
+            <td>10</td>
+        </tr>
+    </tbody>
+</table>
