@@ -1,5 +1,6 @@
 <p>ceramic-piece-list works!</p>
 
+<h1>Lista de Piezas de Cerámica</h1>
 <table class="table">
     <thead>
         <tr>
@@ -7,37 +8,28 @@
             <th>Imagen</th>
             <th>Linea</th>
             <th>Precio</th>
+            <th>Descripcion</th>
             <th>Stock</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
+        @for (piece of pieces; track piece.name){
+        <tr [class.clearance]="piece.clearance">
             <td>{{piece.name}}</td>
             <td><img [src]="piece.image" [alt]="piece.name"></td>
             <td>{{piece.line}}</td>
-            <td>${{piece.price}}</td>
+            <td>{{piece.price | currency}}</td>
+            <td>{{piece.description}}</td>
+            @if(piece.stock === 0) {
+            <td><span class="badge text-bg-warning">Agotado</span></td>
+            } @else {
             <td>{{piece.stock}}</td>
+            }
         </tr>
+        } @empty {
         <tr>
-            <td>Jarra</td>
-            <td><img src="" alt=""></td>
-            <td>Rose</td>
-            <td>$25000</td>
-            <td>3</td>
+            <td colspan="5" class="text-center">No hay piezas disponibles</td>
         </tr>
-        <tr>
-            <td>Budinera</td>
-            <td><img src="" alt=""></td>
-            <td>Gaspeado</td>
-            <td>$22000</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>Cuenco</td>
-            <td><img src="" alt=""></td>
-            <td>Love</td>
-            <td>$15000</td>
-            <td>10</td>
-        </tr>
+        }
     </tbody>
 </table>
