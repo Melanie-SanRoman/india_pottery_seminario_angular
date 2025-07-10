@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CeramicPieceCart {
 
   private _cartList: CeramicPiece[] = [];
-  cartList: BehaviorSubject<CeramicPiece[]> = new BehaviorSubject(this._cartList);
+  cartList: BehaviorSubject<CeramicPiece[]> = new BehaviorSubject<CeramicPiece[]>([]);
 
   constructor() { }
 
@@ -19,5 +19,6 @@ export class CeramicPieceCart {
     } else {
       this._cartList.push({...piece});
     }
+    this.cartList.next(this._cartList);
   }
 }
