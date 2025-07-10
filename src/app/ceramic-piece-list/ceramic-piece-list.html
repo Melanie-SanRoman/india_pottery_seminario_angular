@@ -33,6 +33,7 @@
             <td>
                 @if(piece.stock > 0){
                 <app-input-integer [(quantity)]="piece.quantity" [max]="piece.stock"></app-input-integer>
+                <button class="btn btn-primary" (click)="addToCart(piece)">Agregar al carrito</button>
                 }
             </td>
         </tr>
