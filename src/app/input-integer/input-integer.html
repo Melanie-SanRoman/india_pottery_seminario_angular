@@ -1,1 +1,11 @@
-<p>input-integer works!</p>
+<div class="input-group">
+    <div class="input-group"></div>
+    <div class="input-group-prepend">
+        <button class="btn btn-light btn-sm" (click)="downQuantity()">-</button>
+    </div>
+    <input type="text" [value]="quantity" class="form-control form-control-sm text-center input-quantity"
+        (input)="changeQuantity($event)">
+    <div>
+        <button class="btn btn-light btn-sm" (click)="upQuantity()">+</button>
+    </div>
+</div>
