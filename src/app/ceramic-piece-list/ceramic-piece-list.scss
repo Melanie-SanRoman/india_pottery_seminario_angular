@@ -13,12 +13,20 @@ h1 {
 
 table {
   img {
-    max-width: 150px;
+    max-width: 100px;
   }
 }
 
-.input-quantity {
-  width: 3em;
-  min-width: 0;
-  display: inline-block;
+.stock-message {
+  display: block;
+  width: 90%;
+  white-space: normal;
+  margin-top: 0em;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 10em;
+  min-width: 8em;
+  max-width: 10em;
 }
