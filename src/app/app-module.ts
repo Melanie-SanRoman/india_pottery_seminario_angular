@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { IndiaPotteryAbout } from './india-pottery-about/india-pottery-about';
 import { IndiaPotteryPieces } from './india-pottery-pieces/india-pottery-pieces';
 import { ShoppingCart } from './shopping-cart/shopping-cart';
+import { InputInteger } from './input-integer/input-integer';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ShoppingCart } from './shopping-cart/shopping-cart';
     CeramicPieceList,
     IndiaPotteryAbout,
     IndiaPotteryPieces,
-    ShoppingCart
+    ShoppingCart,
+    InputInteger
   ],
   imports: [
     BrowserModule,
