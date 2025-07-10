@@ -8,7 +8,6 @@
             <th>Imagen</th>
             <th>Linea</th>
             <th>Precio</th>
-            <th>Descripcion</th>
             <th>Stock</th>
             <th>Compra</th>
         </tr>
@@ -20,20 +19,21 @@
             <td><img class="img-thumbnail" [src]="piece.image" [alt]="piece.name"></td>
             <td>{{piece.line}}</td>
             <td>{{piece.price | currency}}</td>
-            <td>{{piece.description}}</td>
             @if(piece.stock === 0) {
             <td><span class="badge text-bg-warning">Agotado</span></td>
-            } @else {
-            <td>{{piece.stock}}</td>
+            } 
+            @else if (piece.stock - piece.quantity === 0) {
+            <td>
+              <span class="badge text-bg-info stock-message">¡Ya seleccionaste todas las unidades disponibles!</span>
+            </td>
+            } 
+            @else {
+            <td>{{piece.stock - piece.quantity}}</td>
             }
             <td>
-                <button class="btn btn-light btn-sm" (click)="downQuantity(piece)">-</button>
-                <input
-                    type="text"
-                    [value]="piece.quantity"
-                    class="form-control form-control-sm text-center input-quantity"
-                    (input)="changeQuantity($event, piece)">
-                <button class="btn btn-light btn-sm" (click)="upQuantity(piece)">+</button>
+                @if(piece.stock > 0){
+                <app-input-integer [(quantity)]="piece.quantity" [max]="piece.stock"></app-input-integer>
+                }
             </td>
         </tr>
         } @empty {
