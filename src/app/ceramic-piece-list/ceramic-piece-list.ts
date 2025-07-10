@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CeramicPiece } from './CeramicPiece';
+import { CeramicPieceCart } from '../ceramic-piece-cart';
 
 @Component({
   selector: 'app-ceramic-piece-list',
@@ -8,6 +9,9 @@ import { CeramicPiece } from './CeramicPiece';
   styleUrl: './ceramic-piece-list.scss',
 })
 export class CeramicPieceList {
+
+  constructor(private cart: CeramicPieceCart) {}
+
   pieces: CeramicPiece[] = [
     {
       name: 'Cafetino',
@@ -46,5 +50,10 @@ export class CeramicPieceList {
       quantity: 0,
     },
   ];
-  constructor() {}
+
+  addToCart(piece: CeramicPiece): void {
+    this.cart.addToCart(piece);
+    piece.stock -= piece.quantity;
+    piece.quantity = 0;
+  }
 }
