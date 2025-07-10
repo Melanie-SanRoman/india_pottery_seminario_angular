@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CeramicPieceCart } from '../ceramic-piece-cart';
+import { CeramicPiece } from '../ceramic-piece-list/CeramicPiece';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -9,5 +11,9 @@ import { CeramicPieceCart } from '../ceramic-piece-cart';
 })
 export class ShoppingCart {
 
-  constructor(private cart: CeramicPieceCart) {}
+  cartList$: Observable<CeramicPiece[]>;
+
+  constructor(private cart: CeramicPieceCart) {
+    this.cartList$ = cart.cartList.asObservable();
+  }
 }
