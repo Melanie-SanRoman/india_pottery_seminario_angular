@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { CeramicPieceList } from './ceramic-piece-list/ceramic-piece-list';
 import { FormsModule } from '@angular/forms';
+import { IndiaPotteryAbout } from './india-pottery-about/india-pottery-about';
+import { IndiaPotteryPieces } from './india-pottery-pieces/india-pottery-pieces';
+import { ShoppingCart } from './shopping-cart/shopping-cart';
 
 @NgModule({
   declarations: [
     App,
-    CeramicPieceList
+    CeramicPieceList,
+    IndiaPotteryAbout,
+    IndiaPotteryPieces,
+    ShoppingCart
   ],
   imports: [
     BrowserModule,
