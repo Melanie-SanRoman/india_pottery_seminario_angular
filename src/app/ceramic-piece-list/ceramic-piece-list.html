@@ -1,8 +1,8 @@
 <p>ceramic-piece-list works!</p>
 
 <h1>Lista de Piezas de Cerámica</h1>
-<table class="table">
-    <thead>
+<table class="table table-hover">
+    <thead class="table-light">
         <tr>
             <th>Producto</th>
             <th>Imagen</th>
@@ -10,13 +10,14 @@
             <th>Precio</th>
             <th>Descripcion</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
         @for (piece of pieces; track piece.name){
         <tr [class.clearance]="piece.clearance">
             <td>{{piece.name}}</td>
-            <td><img [src]="piece.image" [alt]="piece.name"></td>
+            <td><img class="img-thumbnail" [src]="piece.image" [alt]="piece.name"></td>
             <td>{{piece.line}}</td>
             <td>{{piece.price | currency}}</td>
             <td>{{piece.description}}</td>
@@ -25,6 +26,15 @@
             } @else {
             <td>{{piece.stock}}</td>
             }
+            <td>
+                <button class="btn btn-light btn-sm" (click)="downQuantity(piece)">-</button>
+                <input
+                    type="text"
+                    [value]="piece.quantity"
+                    class="form-control form-control-sm text-center input-quantity"
+                    (input)="changeQuantity($event, piece)">
+                <button class="btn btn-light btn-sm" (click)="upQuantity(piece)">+</button>
+            </td>
         </tr>
         } @empty {
         <tr>
