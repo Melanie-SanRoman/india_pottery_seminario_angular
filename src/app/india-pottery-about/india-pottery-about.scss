@@ -1,0 +1,44 @@
+.about-me {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 900px;
+    align-items: center;
+
+    .profile-logo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-details {
+      h1 {
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      .social-links a {
+        margin-right: 1rem;
+        text-decoration: none;
+        color: rgba(0, 119, 204, 0.7);
+        font-weight: bold;
+
+        &:hover{
+            text-decoration: underline;
+            color: #0077cc;
+        }
+      }
+    }
+  }
+}
