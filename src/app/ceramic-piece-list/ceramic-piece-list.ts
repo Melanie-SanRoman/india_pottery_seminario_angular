@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CeramicPiece } from './CeramicPiece';
 import { CeramicPieceCart } from '../ceramic-piece-cart';
+import { CeramicData } from '../ceramic-data';
 
 @Component({
   selector: 'app-ceramic-piece-list',
@@ -10,46 +11,21 @@ import { CeramicPieceCart } from '../ceramic-piece-cart';
 })
 export class CeramicPieceList {
 
-  constructor(private cart: CeramicPieceCart) {}
+  pieces: CeramicPiece[] = [];
 
-  pieces: CeramicPiece[] = [
-    {
-      name: 'Cafetino',
-      line: 'Rose',
-      price: 12000,
-      stock: 5,
-      image: '../assets/images/cafetino_rose.jpg',
-      clearance: false,
-      quantity: 0,
-    },
-    {
-      name: 'Jarra',
-      line: 'Rose',
-      price: 25000,
-      stock: 0,
-      image: '../assets/images/jarra.jpg',
-      clearance: false,
-      quantity: 0,
-    },
-    {
-      name: 'Cuenco',
-      line: 'Love',
-      price: 17000,
-      stock: 10,
-      image: '../assets/images/cuenco.jpg',
-      clearance: true,
-      quantity: 0,
-    },
-    {
-      name: 'Budinera',
-      line: 'Gaspeada',
-      price: 22000,
-      stock: 2,
-      image: '../assets/images/budinera.jpg',
-      clearance: false,
-      quantity: 0,
-    },
-  ];
+  // Injecting the CeramicPieceCart and CeramicData services
+  // to manage the cart and fetch ceramic pieces data
+  constructor(
+    private cart: CeramicPieceCart,
+    private ceramicsData: CeramicData
+  ) {}
+  
+  ngOnInit(): void{
+    // Fetching all ceramic pieces from the CeramicData service
+    this.ceramicsData.getAll().subscribe((pieces: CeramicPiece[]) => {
+      this.pieces = pieces;
+    });
+  }
 
   addToCart(piece: CeramicPiece): void {
     this.cart.addToCart(piece);
