@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { CeramicPieceList } from './ceramic-piece-list/ceramic-piece-list';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IndiaPotteryAbout } from './india-pottery-about/india-pottery-about';
 import { IndiaPotteryPieces } from './india-pottery-pieces/india-pottery-pieces';
 import { ShoppingCart } from './shopping-cart/shopping-cart';
@@ -27,6 +27,7 @@ import { IndiaPotteryContact } from './india-pottery-contact/india-pottery-conta
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
