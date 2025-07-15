@@ -9,6 +9,7 @@ import { IndiaPotteryAbout } from './india-pottery-about/india-pottery-about';
 import { IndiaPotteryPieces } from './india-pottery-pieces/india-pottery-pieces';
 import { ShoppingCart } from './shopping-cart/shopping-cart';
 import { InputInteger } from './input-integer/input-integer';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InputInteger } from './input-integer/input-integer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
