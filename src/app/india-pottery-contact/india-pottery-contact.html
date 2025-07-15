@@ -6,6 +6,11 @@
       Completá el formulario y te responderemos lo antes posible.
     </p>
 
+    <div *ngIf="successMessage" class="alert alert-success text-center" role="alert">
+      ¡Tu mensaje fue enviado exitosamente! Te responderemos pronto.
+    </div>
+
+
     <form [formGroup]="contactForm" (submit)="onSubmit()" class="container mt-4">
 
       <section class="row mb-3">
