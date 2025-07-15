@@ -1,1 +1,53 @@
-<p>india-pottery-contact works!</p>
+<section class="contact-section container my-5 row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <h2 class="text-center mb-4">Contactanos</h2>
+    <p class="text-center mb-4">
+      ¿Tenés alguna duda, querés una pieza personalizada o hacer un encargo especial?
+      Completá el formulario y te responderemos lo antes posible.
+    </p>
+
+    <form [formGroup]="contactForm" (submit)="onSubmit()" class="container mt-4">
+
+      <section class="row mb-3">
+        <article class="col-md-6">
+          <label for="firstName" class="form-label">Nombre</label>
+          <input id="firstName" type="text" class="form-control"
+            [ngClass]="{'is-invalid': contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched}"
+            formControlName="firstName">
+          <div class="invalid-feedback">El nombre es obligatorio.</div>
+        </article>
+
+        <article class="col-md-6">
+          <label for="lastName" class="form-label">Apellido</label>
+          <input id="lastName" type="text" class="form-control"
+            [ngClass]="{'is-invalid': contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched}"
+            formControlName="lastName">
+          <div class="invalid-feedback">El apellido es obligatorio.</div>
+        </article>
+      </section>
+
+      <section class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="email" class="form-control"
+          [ngClass]="{'is-invalid': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}"
+          formControlName="email">
+        <div class="invalid-feedback">Ingresá un email válido.</div>
+      </section>
+
+      <section class="mb-3">
+        <label for="message" class="form-label">Mensaje</label>
+        <textarea id="message" rows="4" class="form-control"
+          [ngClass]="{'is-invalid': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}"
+          formControlName="message"></textarea>
+        <div class="invalid-feedback">El mensaje es obligatorio.</div>
+      </section>
+
+      <section class="text-end">
+        <button class="btn btn-outline-success" type="submit" [disabled]="contactForm.invalid">
+          Enviar
+        </button>
+      </section>
+    </form>
+
+  </div>
+</section>
