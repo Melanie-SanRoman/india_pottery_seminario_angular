@@ -12,7 +12,6 @@ import { map, Observable } from 'rxjs';
 export class ShoppingCart {
   cartList$: Observable<CeramicPiece[]>;
   total$: Observable<number>;
-  // purchaseCompleted = false;
 
   constructor(private cart: CeramicPieceCart) {
     this.cartList$ = cart.cartList.asObservable();
@@ -24,19 +23,7 @@ export class ShoppingCart {
   }
 
   removeFromCart(piece: CeramicPiece) {
-    const currentCart = this.cart.cartList.value; // Obtener valor actual
+    const currentCart = this.cart.cartList.value; 
     const pieceInCart = currentCart.find((p) => p.id === piece.id);
   }
-
-  // finalizePurchase() {
-  //   this.purchaseCompleted = true;
-
-  //   // Acá podrías limpiar el carrito también:
-  //   this.cart.cartList.next([]);
-
-  //   // Ocultar el mensaje luego de unos segundos
-  //   setTimeout(() => {
-  //     this.purchaseCompleted = false;
-  //   }, 4000);
-  // }
 }
