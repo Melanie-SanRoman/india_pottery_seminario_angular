@@ -22,10 +22,9 @@ export class IndiaPotteryContact {
   if (this.contactForm.valid) {
     console.log('Form Submitted!', this.contactForm.value);
 
-    this.successMessage = true; // Muestra el mensaje
-    this.contactForm.reset();   // Limpia el formulario
+    this.successMessage = true; 
+    this.contactForm.reset();   
 
-    // Oculta el mensaje luego de 5 segundos
     setTimeout(() => {
       this.successMessage = false;
     }, 5000);

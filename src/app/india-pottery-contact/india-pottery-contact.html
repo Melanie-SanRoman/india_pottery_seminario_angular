@@ -1,58 +1,55 @@
-<section class="contact-section my-5 row justify-content-center">
-  <div class="col-md-8 col-lg-6">
-    <h2 class="text-center mb-4">Contactanos</h2>
-    <p class="text-center mb-4">
+<section class="contact-section py-5 px-3 d-flex justify-content-center">
+  <div class="card shadow rounded-4 p-4 w-100" style="max-width: 700px">
+    <h2 class="text-center mb-3 text-success display-6">📩 Contáctanos</h2>
+    <p class="text-center text-muted mb-4 lead">
       ¿Tenés alguna duda, querés una pieza personalizada o hacer un encargo especial?
       Completá el formulario y te responderemos lo antes posible.
     </p>
 
-    <div *ngIf="successMessage" class="alert alert-success text-center" role="alert">
-      ¡Tu mensaje fue enviado exitosamente! Te responderemos pronto.
-    </div>
-
-
-    <form [formGroup]="contactForm" (submit)="onSubmit()" class="container mt-4">
-
-      <section class="row mb-3">
-        <article class="col-md-6">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="row g-3">
+        <div class="col-md-6">
           <label for="firstName" class="form-label">Nombre</label>
-          <input id="firstName" type="text" class="form-control"
+          <input id="firstName" type="text" class="form-control rounded-3"
             [ngClass]="{'is-invalid': contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched}"
             formControlName="firstName">
           <div class="invalid-feedback">El nombre es obligatorio.</div>
-        </article>
+        </div>
 
-        <article class="col-md-6">
+        <div class="col-md-6">
           <label for="lastName" class="form-label">Apellido</label>
-          <input id="lastName" type="text" class="form-control"
+          <input id="lastName" type="text" class="form-control rounded-3"
             [ngClass]="{'is-invalid': contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched}"
             formControlName="lastName">
           <div class="invalid-feedback">El apellido es obligatorio.</div>
-        </article>
-      </section>
+        </div>
+      </div>
 
-      <section class="mb-3">
+      <div class="mt-3">
         <label for="email" class="form-label">Email</label>
-        <input id="email" type="email" class="form-control"
+        <input id="email" type="email" class="form-control rounded-3"
           [ngClass]="{'is-invalid': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}"
           formControlName="email">
         <div class="invalid-feedback">Ingresá un email válido.</div>
-      </section>
+      </div>
 
-      <section class="mb-3">
+      <div class="mt-3">
         <label for="message" class="form-label">Mensaje</label>
-        <textarea id="message" rows="4" class="form-control"
+        <textarea id="message" rows="4" class="form-control rounded-3"
           [ngClass]="{'is-invalid': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}"
           formControlName="message"></textarea>
         <div class="invalid-feedback">El mensaje es obligatorio.</div>
-      </section>
+      </div>
 
-      <section class="text-end">
-        <button class="btn btn-outline-success" type="submit" [disabled]="contactForm.invalid">
-          Enviar
+      <div *ngIf="successMessage" class="alert alert-success text-center rounded-3" role="alert">
+        ¡Tu mensaje fue enviado exitosamente! Te responderemos pronto.
+      </div>
+
+      <div class="text-end mt-4">
+        <button class="btn btn-success px-4 py-2 rounded-3 shadow-sm" type="submit" [disabled]="contactForm.invalid">
+          Enviar mensaje
         </button>
-      </section>
+      </div>
     </form>
-
   </div>
 </section>
