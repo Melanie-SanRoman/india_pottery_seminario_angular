@@ -13,9 +13,9 @@ Este proyecto es una aplicación web diseñada para el emprendimiento **India Po
 Brindar una plataforma simple y visualmente atractiva donde los usuarios puedan:
 
 - Conocer más sobre la marca y su filosofía
-- Ver productos disponibles por línea o estilo
+- Ver productos disponibles por línea
 - Añadir productos a un carrito de compras
-- Leer y dejar reseñas de otros usuarios
+- Leer reseñas de otros usuarios y dejar las propias
 - Contactarse para pedidos personalizados
 
 ## Tecnologías utilizadas
