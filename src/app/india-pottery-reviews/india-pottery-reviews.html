@@ -1,1 +1,95 @@
-<p>india-pottery-reviews works!</p>
+<section class="row justify-content-center px-3">
+    <div class="col-md-10 col-lg-8">
+        <h2 class="text-center mb-3 display-6">✨ ¡La comunidad habló!</h2>
+
+        <p class="text-center lead">
+            Conocé lo que opinan quienes ya compraron piezas de cerámica en <strong>India Pottery</strong>.
+        </p>
+
+        <div class="text-center mb-4">
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                ✍️ Dejar una reseña
+            </button>
+        </div>
+
+        <div class="container px-0">
+            @for (review of reviews; track review.id) {
+            <div class="card mb-4 border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 class="card-title mb-0 text-primary">{{ review.name }}</h5>
+                        <span class="badge bg-warning text-dark fs-6">
+                            ⭐ {{ review.calification }}/5
+                        </span>
+                    </div>
+                    <p class="card-text fst-italic">{{ review.comment }}</p>
+                </div>
+            </div>
+            }
+            @empty {
+            <div class="alert alert-info text-center mt-4">
+                No hay reseñas disponibles todavía. ¡Sé el primero en opinar! 💬
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<div #reviewModal class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+  <section class="modal-dialog">
+    <section class="modal-content p-4 rounded shadow-sm border-0">
+      <h4 class="mb-3 text-center text-primary" id="reviewModalLabel">Escribí tu reseña</h4>
+
+      <form [formGroup]="reviewForm" (ngSubmit)="submitReview()">
+        <!-- Nombre -->
+        <section class="mb-3">
+          <label for="name" class="form-label">Tu nombre</label>
+          <input
+            id="name"
+            type="text"
+            class="form-control"
+            placeholder="Ej: Ana"
+            formControlName="name"
+            [ngClass]="{'is-invalid': reviewForm.get('name')?.invalid && reviewForm.get('name')?.touched}" />
+        </section>
+
+        <!-- Comentario -->
+        <section class="mb-3">
+          <label for="comment" class="form-label">Comentario</label>
+          <textarea
+            id="comment"
+            class="form-control"
+            rows="3"
+            placeholder="Contanos tu experiencia..."
+            formControlName="comment"
+            [ngClass]="{'is-invalid': reviewForm.get('comment')?.invalid && reviewForm.get('comment')?.touched}">
+          </textarea>
+        </section>
+
+        <!-- Calificación -->
+        <section class="mb-3">
+          <label for="rating" class="form-label">Calificación</label>
+          <input
+            id="rating"
+            type="number"
+            min="1"
+            max="5"
+            class="form-control"
+            formControlName="calification"
+            [ngClass]="{'is-invalid': reviewForm.get('calification')?.invalid && reviewForm.get('calification')?.touched}" />
+        </section>
+
+        <!-- Botones -->
+        <section class="d-flex justify-content-end align-items-center gap-2">
+            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-success btn" [disabled]="reviewForm.invalid">Enviar</button>
+        </section>
+
+        <!-- Éxito -->
+        <section *ngIf="successMessage" class="alert alert-success mt-3 text-center" role="alert">
+          ¡Tu reseña fue enviada exitosamente! Gracias por compartir tu experiencia.
+        </section>
+      </form>
+    </section>
+  </section>
+</div>
