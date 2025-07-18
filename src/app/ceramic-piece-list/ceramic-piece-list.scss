@@ -15,6 +15,20 @@ table {
   img {
     max-width: 100px;
   }
+
+  td{
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  th:nth-child(5),
+  td:nth-child(5),
+  #td_quantity,
+  #td_name  {
+    width: 8em;
+    min-width: 8em;
+    max-width: 10em;
+  }
 }
 
 .stock-message {
@@ -22,11 +36,4 @@ table {
   width: 90%;
   white-space: normal;
   margin-top: 0em;
-}
-
-th:nth-child(5),
-td:nth-child(5) {
-  width: 10em;
-  min-width: 8em;
-  max-width: 10em;
 }

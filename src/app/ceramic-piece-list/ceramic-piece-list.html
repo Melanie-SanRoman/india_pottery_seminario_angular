@@ -1,9 +1,7 @@
-<p>ceramic-piece-list works!</p>
-
-<h1>Lista de Piezas de Cerámica</h1>
-<table class="table table-hover">
+<h2>Piezas de cerámica disponibles</h2>
+<table class="table table-hover mt-4">
     <thead class="table-light">
-        <tr>
+        <tr class="text-center">
             <th>Producto</th>
             <th>Imagen</th>
             <th>Linea</th>
@@ -13,28 +11,31 @@
         </tr>
     </thead>
     <tbody class="table-group-divider">
-        @for (piece of pieces; track piece.name){
+        @for (piece of pieces; track piece.id){
         <tr [class.clearance]="piece.clearance">
-            <td>{{piece.name}}</td>
+            <td id="td_name">{{piece.name}}</td>
             <td><img class="img-thumbnail" [src]="piece.image" [alt]="piece.name"></td>
             <td>{{piece.line}}</td>
             <td>{{piece.price | currency}}</td>
             @if(piece.stock === 0) {
-            <td><span class="badge text-bg-warning">Agotado</span></td>
-            } 
+            <td class="text-center"><span class="badge text-bg-warning">Agotado</span></td>
+            }
             @else if (piece.stock - piece.quantity === 0) {
             <td>
-              <span class="badge text-bg-info stock-message">¡Ya seleccionaste todas las unidades disponibles!</span>
+                <span class="badge text-bg-info stock-message">¡Ya seleccionaste todas las unidades disponibles!</span>
             </td>
-            } 
-            @else {
-            <td>{{piece.stock - piece.quantity}}</td>
             }
-            <td>
+            @else {
+            <td class="text-center">{{piece.stock - piece.quantity}}</td>
+            }
+            <td id="td_quantity">
+                <div class="d-flex align-items-center flex-column gap-2">
                 @if(piece.stock > 0){
                 <app-input-integer [(quantity)]="piece.quantity" [max]="piece.stock"></app-input-integer>
-                <button class="btn btn-primary" (click)="addToCart(piece)">Agregar al carrito</button>
+                <button class="btn btn-primary btn-sm" (click)="addToCart(piece)">Agregar <i
+                        class="bi bi-cart"></i></button>
                 }
+                </div>
             </td>
         </tr>
         } @empty {
