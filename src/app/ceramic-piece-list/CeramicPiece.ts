@@ -1,4 +1,5 @@
 export interface CeramicPiece{
+    id: number;
     name: string;
     line: string;
     price: number;
