@@ -1,59 +1,44 @@
-# IndiaPottery
+# India Pottery - Cerámica Artesanal
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+Este proyecto es una aplicación web diseñada para el emprendimiento **India Pottery**, un espacio dedicado a la venta de piezas de cerámica hechas a mano. Cada objeto es único, creado con dedicación y pensado para brindar funcionalidad y belleza en la vida cotidiana.
 
-## Development server
+## Alumna
+- San Román, Melanie.
+- DNI: 45.577.753
+- srmel123@gmail.com
+- Tres Arroyos.
 
-To start a local development server, run:
+## Objetivo
 
-```bash
-ng serve
-```
+Brindar una plataforma simple y visualmente atractiva donde los usuarios puedan:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Conocer más sobre la marca y su filosofía
+- Ver productos disponibles por línea o estilo
+- Añadir productos a un carrito de compras
+- Leer y dejar reseñas de otros usuarios
+- Contactarse para pedidos personalizados
 
-## Code scaffolding
+## Tecnologías utilizadas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Angular** para el desarrollo del frontend  
+- **Bootstrap** para el diseño visual responsive  
+- **JSON Server / API simulada** para la carga de productos y reseñas  
+- **TypeScript, HTML y SCSS** para estructurar y dar estilo a los componentes
 
-```bash
-ng generate component component-name
-```
+## Estructura del proyecto
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Pantalla de inicio:** incluye dos subpantallas:  
+  - **Lista de productos:** muestra las piezas disponibles con opción de compra  
+  - **Carrito de compras:** permite revisar lo seleccionado y ver el total  
 
-```bash
-ng generate --help
-```
+- **Página About Me:** sección donde se cuenta la historia y visión del emprendimiento  
+- **Página de contacto:** formulario para consultas y pedidos especiales  
+- **Sección de reseñas:** espacio donde los usuarios pueden leer o dejar opiniones  
 
-## Building
+## Estado actual
 
-To build the project run:
+La aplicación se encuentra en desarrollo. Las funcionalidades principales ya están implementadas y se continúa trabajando en mejoras visuales, interacción con la API y validaciones de formularios.
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+¡Gracias por leer! ✨
