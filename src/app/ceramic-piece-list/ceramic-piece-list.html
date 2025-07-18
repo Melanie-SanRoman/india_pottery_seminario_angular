@@ -1,19 +1,20 @@
-<h2>Piezas de cerámica disponibles</h2>
-<table class="table table-hover mt-4">
+<h2 class="display-6 text-center mb-4 text-secondary">Piezas de Cerámica Disponibles</h2>
+
+<table class="table table-hover shadow-sm mt-4 align-middle text-center">
     <thead class="table-light">
         <tr class="text-center">
-            <th>Producto</th>
-            <th>Imagen</th>
-            <th>Linea</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Compra</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Linea</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Compra</th>
         </tr>
     </thead>
     <tbody class="table-group-divider">
         @for (piece of pieces; track piece.id){
         <tr [class.clearance]="piece.clearance">
-            <td id="td_name">{{piece.name}}</td>
+            <td class="td_name">{{piece.name}}</td>
             <td><img class="img-thumbnail" [src]="piece.image" [alt]="piece.name"></td>
             <td>{{piece.line}}</td>
             <td>{{piece.price | currency}}</td>
@@ -28,11 +29,11 @@
             @else {
             <td class="text-center">{{piece.stock - piece.quantity}}</td>
             }
-            <td id="td_quantity">
+            <td class="td_quantity">
                 <div class="d-flex align-items-center flex-column gap-2">
                 @if(piece.stock > 0){
                 <app-input-integer [(quantity)]="piece.quantity" [max]="piece.stock"></app-input-integer>
-                <button class="btn btn-primary btn-sm" (click)="addToCart(piece)">Agregar <i
+                <button class="btn btn-outline-success btn-sm" (click)="addToCart(piece)">Agregar <i
                         class="bi bi-cart"></i></button>
                 }
                 </div>
