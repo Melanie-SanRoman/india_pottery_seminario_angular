@@ -11,6 +11,7 @@ import { ShoppingCart } from './shopping-cart/shopping-cart';
 import { InputInteger } from './input-integer/input-integer';
 import { HttpClientModule } from '@angular/common/http';
 import { IndiaPotteryContact } from './india-pottery-contact/india-pottery-contact';
+import { IndiaPotteryReviews } from './india-pottery-reviews/india-pottery-reviews';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { IndiaPotteryContact } from './india-pottery-contact/india-pottery-conta
     IndiaPotteryPieces,
     ShoppingCart,
     InputInteger,
-    IndiaPotteryContact
+    IndiaPotteryContact,
+    IndiaPotteryReviews,
   ],
   imports: [
     BrowserModule,
